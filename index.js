@@ -1,6 +1,9 @@
 const express = require("express")
+const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 8000
+
+app.use(cors())
 
 app.get('/', (req,res) => {
     res.send("Hello Home Page Umayer")
@@ -13,6 +16,15 @@ const users = [
 ]
 
 app.get('/user', (req,res) => {
+    res.send(users)
+})
+
+app.post('/user', (req,res) => {
+    console.log('post paisi', req.body)
+    res.send({success: true, message:'post method working'})
+})
+
+app.get('/product', (req,res) => {
     res.send(users)
 })
 
