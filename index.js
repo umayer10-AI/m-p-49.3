@@ -3,7 +3,7 @@ const app = express()
 const port = process.env.PORT || 8000
 
 app.get('/', (req,res) => {
-    res.end("Hello Home Page Umayer")
+    res.send("Hello Home Page Umayer")
 })
 
 const users = [
@@ -13,7 +13,7 @@ const users = [
 ]
 
 app.get('/user', (req,res) => {
-    res.end(users)
+    res.send(users)
 })
 
 app.listen(port, () => {
